@@ -7,21 +7,34 @@ import { HttpClient, HttpHeaders }    from '@angular/common/http';
 @Injectable()
 export class SalunosService {
 
-  private pokemonCatcher:string =  "https://pokeapi.co/api/v2";
+  private pokemonCatcher:string =  "https://pokeapi.co/api/v2/";
 
   constructor(private http:HttpClient) { 
   }
 
   getPokemons(page?:string): Observable<Pokemon[]>{
-    //Retorna os 20 primeiros pokemons se vier a null senão tem que receber valor de 20 em 20 para os próximos pokemons
+    //Retorna os 20 primeiros pokemons se vier a null senão tem que receber o endereço
     if(page == null){
-      return this.http.get<Pokemon[]>(this.pokemonCatcher+"/pokemon?offset=0&limit=20");
+      return this.http.get<Pokemon[]>(this.pokemonCatcher + "pokemon?offset=0&limit=20");
     }else{
-      return this.http.get<Pokemon[]>(this.pokemonCatcher+"/pokemon?offset="+page+"&limit=20");
+      return this.http.get<Pokemon[]>(page);
     }
   }
+
+  getPokemon(pokemon:string): Observable<Pokemon>{
+    //Retorna o pokemon enviado
+    return this.http.get<Pokemon>(this.pokemonCatcher + "pokemon/" + pokemon);
+
+  }
+
   getAllTypes(): Observable<Type[]>{
     //Retorna os 20 tipo de de pokemons
-    return this.http.get<Type[]>(this.pokemonCatcher+"/type")
+    return this.http.get<Type[]>(this.pokemonCatcher + "type")
+  }
+
+  getSpecificType(type:string): Observable<Pokemon[]>{
+    //Retorna todos os pokemons desse tipo
+    return this.http.get<Pokemon[]>(type);
+
   }
 }
