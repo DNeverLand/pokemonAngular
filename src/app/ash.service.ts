@@ -26,9 +26,9 @@ export class AshService {
 
   }
 
-  getAllTypes(): Observable<Type[]>{
+  getAllTypes(): Observable<string[]>{
     //Retorna os 20 tipo de de pokemons
-    return this.http.get<Type[]>(this.pokemonCatcher + "type")
+    return this.http.get<string[]>(this.pokemonCatcher + "type")
   }
 
   getSpecificType(type:string): Observable<Pokemon[]>{

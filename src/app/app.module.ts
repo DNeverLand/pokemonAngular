@@ -11,7 +11,8 @@ import { DetalhesPokemonComponent } from './detalhes-pokemon/detalhes-pokemon.co
 import { AshService } from './ash.service';
 
 const routes: Routes = [
-    {path: 'pokemons/:pokemonId', component: DetalhesPokemonComponent}  
+    {path: 'pokemons/:pokemonId', component: DetalhesPokemonComponent},
+    { path: 'pokemons', component: ListaPokemonsComponent}
 ];
 
 @NgModule({

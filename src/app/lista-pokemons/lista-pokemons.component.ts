@@ -9,12 +9,18 @@ import { Pokemon } from '../pokemon';
 })
 export class ListaPokemonsComponent implements OnInit {
   pokemons = []
+  previous:string;
+  next:string;
 
   constructor(private servicepokemons:AshService) {  
   }
 
   getPokemons(){
-    this.servicepokemons.getPokemons().subscribe(dados => this.pokemons = dados.results);
+    this.servicepokemons.getPokemons().subscribe(dados => {this.pokemons = dados.results;
+      this.next = dados.next;
+      this.previous = dados.previous;
+    
+    });
   }
 
   ngOnInit() {
