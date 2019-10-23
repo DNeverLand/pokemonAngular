@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SalunosService } from '../ash.service'
+import { AshService } from '../ash.service';
+import { Pokemon } from '../pokemon';
 
 @Component({
   selector: 'app-lista-pokemons',
@@ -7,14 +8,14 @@ import { SalunosService } from '../ash.service'
   styleUrls: ['./lista-pokemons.component.css']
 })
 export class ListaPokemonsComponent implements OnInit {
-  pokemons = [];
+  pokemons:Pokemon[]
 
   constructor(
-    private servicepokemons:SalunosService
+    private servicepokemons:AshService
   ) { }
 
     getPokemons(){
-      this.servicepokemons.getPokemons().subscribe(dados => this.pokemons = dados.results;
+      this.servicepokemons.getPokemons().subscribe(dados => this.pokemons = dados);
     }
 
   ngOnInit() {
