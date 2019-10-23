@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { AshService } from '../ash.service';
 import { ActivatedRoute } from '@angular/router';
-import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-detalhes-pokemon',

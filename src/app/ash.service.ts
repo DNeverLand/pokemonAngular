@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable, of, BehaviorSubject} from 'rxjs';
 import { Pokemon } from './pokemon';
+import { DataApi } from './data-api';
 import { HttpClient, HttpHeaders }    from '@angular/common/http';
 
 @Injectable()
@@ -11,12 +12,12 @@ export class AshService {
   constructor(private http:HttpClient) { 
   }
 
-  getPokemons(page?:string): Observable<Pokemon[]>{
+  getPokemons(page?:string): Observable<DataApi>{
     //Retorna os 20 primeiros pokemons se vier a null senão tem que receber o endereço
     if(page == null){
-      return this.http.get<Pokemon[]>(this.pokemonCatcher + "pokemon?offset=0&limit=20");
+      return this.http.get<DataApi>(this.pokemonCatcher + "pokemon?offset=0&limit=20");
     }else{
-      return this.http.get<Pokemon[]>(page);
+      return this.http.get<DataApi>(page);
     }
   }
 
