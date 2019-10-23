@@ -1,1 +1,11 @@
-<p>lista-pokemons works!</p>
+<h1 class="text-center">Lista de pokemons</h1>
+<div class="row">
+<div class="col-12">
+    <ul **ngFor="let pokemon of pokemons">
+        <li>
+            <a [[routerLink]="['/detalhes-pokemon', pokemon.url]"></a>
+            {{pokemon.name}}
+        </li>
+    </ul>
+</div>
+</div>
