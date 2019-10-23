@@ -13,8 +13,8 @@ export class DetalhesPokemonComponent implements OnInit {
   constructor(private servicePokemons:AshService, private route:ActivatedRoute) { }
 
   ngOnInit() {
-    let name:string;
-    this.route.paramMap.subscribe(pokemon => name = pokemon.get('pokemon'));
+    let url:string;
+    this.route.paramMap.subscribe(pokemon => url = pokemon.get('pokemon'));
     this.servicePokemons.getPokemon(name).subscribe(pokemon => this.pokemon = pokemon);
   }
 
