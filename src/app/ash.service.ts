@@ -5,7 +5,7 @@ import { Type } from './type';
 import { HttpClient, HttpHeaders }    from '@angular/common/http';
 
 @Injectable()
-export class SalunosService {
+export class AshService {
 
   private pokemonCatcher:string =  "https://pokeapi.co/api/v2/";
 

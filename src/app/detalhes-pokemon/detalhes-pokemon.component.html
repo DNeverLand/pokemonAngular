@@ -1,1 +1,37 @@
-<p>detalhes-pokemon works!</p>
+
+    <div class="row d-flex justify-content-start">
+        <h4>Detalhes do ...</h4>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <h6>Imagens</h6>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-3">
+            <figure>
+                <img src={{sprite.front_default}}/>
+                <figcaption>Default</figcaption>
+            </figure>
+        </div>
+        <div class="col-3">
+            <figure>
+                <img src={{sprite.front_shiny}}/>
+                <figcaption>Shiny</figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <h6>Habilidades</h6>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div *ngFor="let ability of pokemon.abilities">
+            <div class="col-3">
+                
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <h6>Tipo</h6>
+    </div>
+    <div class="row d-flex justify-content-center">
+            <p>...</p>
+    </div>  
