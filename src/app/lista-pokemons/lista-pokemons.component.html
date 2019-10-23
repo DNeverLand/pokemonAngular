@@ -1,11 +1,14 @@
 <h1 class="text-center">Lista de pokemons</h1>
 <div class="row">
-<div class="col-12">
     <ul *ngFor="let pokemon of pokemons">
+        <div class="col-4">
         <li>
-            <a [routerLink]="['/detalhes-pokemon', pokemon.url]"></a>
-            {{pokemon.name}}
+            <button class="btn btn-outline-success"
+                [title]="'Detalhes de '+ pokemon.name"
+                [routerLink]="['/pokemons', pokemon.url.split('/')[6]]">
+                {{pokemon.name}}
+            </button>
         </li>
+    </div>
     </ul>
-</div>
 </div>

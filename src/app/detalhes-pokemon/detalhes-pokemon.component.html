@@ -1,20 +1,20 @@
-
-    <div class="row d-flex justify-content-start">
-        <h4>Detalhes do ...</h4>
+<div *ngIf="pokemon">
+    <div class="row d-flex justify-content-center mb-5">
+        <h4>Detalhes do {{pokemon.forms[0].name}}</h4>
     </div>
     <div class="row d-flex justify-content-center">
         <h6>Imagens</h6>
     </div>
-    <div class="row d-flex justify-content-center">
-        <div class="col-3">
+    <div class="row my-3">
+        <div class="col-6 d-flex justify-content-end">
             <figure>
-                <img src={{sprite.front_default}}/>
+                <img src="{{pokemon.sprites.front_default}}"/>
                 <figcaption>Default</figcaption>
             </figure>
         </div>
-        <div class="col-3">
+        <div class="col-6 d-flex justify-content-start">
             <figure>
-                <img src={{sprite.front_shiny}}/>
+                <img src="{{pokemon.sprites.front_shiny}}"/>
                 <figcaption>Shiny</figcaption>
             </figure>
         </div>
@@ -22,10 +22,10 @@
     <div class="row d-flex justify-content-center">
         <h6>Habilidades</h6>
     </div>
-    <div class="row d-flex justify-content-center">
-        <div *ngFor="let ability of pokemon.abilities">
+    <div class="row d-flex justify-content-center my-3">
+        <div *ngFor="let ability of abilities">
             <div class="col-3">
-                
+                <p>{{ability.ability.name}}</p>
             </div>
         </div>
     </div>
@@ -33,5 +33,10 @@
         <h6>Tipo</h6>
     </div>
     <div class="row d-flex justify-content-center">
-            <p>...</p>
+        <div *ngFor="let type of types">
+            <div class="col-3">
+                <p>{{type.type.name}}</p>
+            </div>
+        </div>
     </div>  
+</div>

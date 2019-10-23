@@ -2,7 +2,7 @@ import { Type } from '@angular/compiler';
 
 export class Pokemon {
     name:string;
-    type:Type;
+    types:[];
     abilities:[];
     photo:string;
 }

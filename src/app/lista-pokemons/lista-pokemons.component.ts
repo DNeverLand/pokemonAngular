@@ -8,17 +8,17 @@ import { Pokemon } from '../pokemon';
   styleUrls: ['./lista-pokemons.component.css']
 })
 export class ListaPokemonsComponent implements OnInit {
-  pokemons:Pokemon[]
+  pokemons = []
 
-  constructor(
-    private servicepokemons:AshService
-  ) { }
+  constructor(private servicepokemons:AshService) {  
+  }
 
-    getPokemons(){
-      this.servicepokemons.getPokemons().subscribe(dados => this.pokemons = dados);
-    }
+  getPokemons(){
+    this.servicepokemons.getPokemons().subscribe(dados => this.pokemons = dados.results);
+  }
 
   ngOnInit() {
+    this.getPokemons();
   }
 
 }

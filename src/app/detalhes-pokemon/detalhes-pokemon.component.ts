@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { AshService } from '../ash.service';
 import { ActivatedRoute } from '@angular/router';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-detalhes-pokemon',
@@ -9,13 +10,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detalhes-pokemon.component.css']
 })
 export class DetalhesPokemonComponent implements OnInit {
-  	pokemon:Pokemon;
+    pokemon:Pokemon;
+    abilities = [];
+    types = [];
   constructor(private servicePokemons:AshService, private route:ActivatedRoute) { }
 
   ngOnInit() {
-    let url:string;
-    this.route.paramMap.subscribe(pokemon => url = pokemon.get('pokemon'));
-    this.servicePokemons.getPokemon(name).subscribe(pokemon => this.pokemon = pokemon);
+    let id:number;
+    this.route.paramMap.subscribe(params => id = +params.get('pokemonId'));
+    this.servicePokemons.getPokemon(id).subscribe(pokemon => {this.pokemon = pokemon;
+      this.abilities = pokemon.abilities;
+      this.types = pokemon.types;   
+    });
+
+
   }
 
 }

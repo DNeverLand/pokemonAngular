@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ListaPokemonsComponent } from './lista-pokemons/lista-pokemons.component';
 import { DetalhesPokemonComponent } from './detalhes-pokemon/detalhes-pokemon.component';
+import { AshService } from './ash.service';
 
 const routes: Routes = [
-    {path: 'pokemons/:pokemon', component: DetalhesPokemonComponent}  
+    {path: 'pokemons/:pokemonId', component: DetalhesPokemonComponent}  
 ];
 
 @NgModule({
@@ -18,13 +19,15 @@ const routes: Routes = [
     AppComponent,
     NavbarComponent,
     ListaPokemonsComponent,
-    DetalhesPokemonComponent
+    DetalhesPokemonComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes), 
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [AshService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

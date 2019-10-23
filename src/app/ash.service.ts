@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, of, BehaviorSubject} from 'rxjs';
 import { Pokemon } from './pokemon';
-import { Type } from './type';
 import { HttpClient, HttpHeaders }    from '@angular/common/http';
 
 @Injectable()
@@ -21,9 +20,9 @@ export class AshService {
     }
   }
 
-  getPokemon(pokemon:string): Observable<Pokemon>{
+  getPokemon(id:number): Observable<Pokemon>{
     //Retorna o pokemon enviado
-    return this.http.get<Pokemon>(this.pokemonCatcher + "pokemon/" + pokemon);
+    return this.http.get<Pokemon>(this.pokemonCatcher + "pokemon/" + id);
 
   }
 
