@@ -9,10 +9,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ListaPokemonsComponent } from './lista-pokemons/lista-pokemons.component';
 import { DetalhesPokemonComponent } from './detalhes-pokemon/detalhes-pokemon.component';
 import { AshService } from './ash.service';
+import { FightComponent } from './fight/fight.component';
 
 const routes: Routes = [
-    {path: 'pokemons/:pokemonId', component: DetalhesPokemonComponent},
-    { path: 'pokemons', component: ListaPokemonsComponent}
+    { path: 'pokemons/:pokemonId', component: DetalhesPokemonComponent},
+    { path: 'pokemons', component: ListaPokemonsComponent},
+    { path: 'fight', component: FightComponent}
 ];
 
 @NgModule({
@@ -21,6 +23,7 @@ const routes: Routes = [
     NavbarComponent,
     ListaPokemonsComponent,
     DetalhesPokemonComponent,
+    FightComponent,
   ],
   imports: [
     BrowserModule,

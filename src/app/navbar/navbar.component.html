@@ -1,14 +1,12 @@
-<nav class="navbar navbar-dark bg-primary navbar-expand-lg" style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="#">Pokemons</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
+<nav class="navbar navbar-dark navbar-expand-lg border border-dark" style="background-color: #D1422F;">
+        <span class="navbar-brand">Pokémons</span>
+        <a class="navbar-brand" [routerLink]="['/pokemons']" routerLinkActive="router-link-active" alt="pokeball"><img class="img1" src="../../assets/imgs/pokeball.png"></a>
+        <a class="navbar-brand" [routerLink]="['/fight']" alt="fight"><img class="img2" src="../../assets/imgs/battle.png"></a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="d-flex justify-content-end">
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" #pokemon placeholder="Search" aria-label="Search">
-            <a class="btn btn-outline-light my-2 my-sm-0" [routerLink]="['/pokemons', pokemon.value]">Search</a>
+            <a class="btn btn-secondary my-2 my-sm-0" [routerLink]="['/pokemons', pokemon.value]">Search</a>
           </form>
           </div>
         </div>

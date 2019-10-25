@@ -1,22 +1,20 @@
 <h1 class="text-center mt-3">Lista de pokemons</h1>
 <div class="row mt-3">
-    <ul *ngFor="let pokemon of pokemons">
-        <div class="col-4">
-        <li class="w-100">
-            <button class="btn btn-outline-success"
+    <div class="col-4" *ngFor="let pokemon of pokemons">
+            <button class="btn btn-danger btn-block m-2"
                 [title]="'Detalhes de '+ pokemon.name"
                 [routerLink]="['/pokemons', pokemon.url.split('/')[6]]">
                 {{pokemon.name}}
             </button>
-        </li>
     </div>
-    </ul>
 </div>
-    <div class="row">
-        <div class="col-6 d-flex justify-content-end">
-            <button (click)="getPokemonsPreviousNext(false);" class="btn btn-primary">Previous</button>
+    <div class="row my-5">
+        <div class="col-3"></div>
+        <div class="col-3 d-flex justify-content-end">
+            <button (click)="getPokemonsPreviousNext(false);" class="btn btn-primary btn-block">Previous</button>
         </div>
-        <div class="col-6 d-flex justify-content-start">
-            <button (click)="getPokemonsPreviousNext(true);" name class="btn btn-primary">Next</button>
+        <div class="col-3 d-flex justify-content-start ">
+            <button (click)="getPokemonsPreviousNext(true);" name class="btn btn-primary btn-block">Next</button>
         </div>
+        <div class="col-3"></div>
     </div>

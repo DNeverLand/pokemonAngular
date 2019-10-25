@@ -3,6 +3,10 @@ import { AshService } from '../ash.service';
 import { DataApi} from '../data-api';
 import { Pokemon } from '../pokemon';
 
+
+/*Não esta a aparecer a lista de pokemons*/
+
+
 @Component({
   selector: 'app-lista-pokemons',
   templateUrl: './lista-pokemons.component.html',
@@ -23,22 +27,26 @@ export class ListaPokemonsComponent implements OnInit {
       this.data = dados;
       console.log(this.data);
       this.pokemons = this.data.results;
+      console.log(this.pokemons);
       this.next = this.data.next;
       this.previous = this.data.previous;
     });
 
-
+    console.log(this.pokemons);
   }
   getPokemonsPreviousNext(flag:boolean){
         if(flag == true){
           this.servicepokemons.getPokemons(this.next).subscribe(dados => { 
           this.data = dados;
+          this.pokemons = this.data.results;
           this.next = this.data.next;
           this.previous = this.data.previous;
         });
         console.log(this.data);
       }else{
-        this.servicepokemons.getPokemons(this.previous).subscribe(dados => { this.data = dados;
+        this.servicepokemons.getPokemons(this.previous).subscribe(dados => {
+        this.data = dados;
+        this.pokemons = this.data.results;
         this.next = this.data.next;
         this.previous = this.data.previous;
         });
