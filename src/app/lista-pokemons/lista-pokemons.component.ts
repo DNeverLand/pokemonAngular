@@ -4,8 +4,6 @@ import { DataApi} from '../data-api';
 import { Pokemon } from '../pokemon';
 
 
-/*Não esta a aparecer a lista de pokemons*/
-
 
 @Component({
   selector: 'app-lista-pokemons',
@@ -22,10 +20,8 @@ export class ListaPokemonsComponent implements OnInit {
   }
 
   getPokemons(){
-    this.servicepokemons.getPokemons().subscribe(dados => {
-      
+    this.servicepokemons.getPokemons().subscribe(dados => {  
       this.data = dados;
-      console.log(this.data);
       this.pokemons = this.data.results;
       console.log(this.pokemons);
       this.next = this.data.next;
@@ -44,7 +40,8 @@ export class ListaPokemonsComponent implements OnInit {
         });
         console.log(this.data);
       }else{
-        this.servicepokemons.getPokemons(this.previous).subscribe(dados => {
+
+        this.servicepokemons.getPokemons(this.previous).subscribe(dados => { 
         this.data = dados;
         this.pokemons = this.data.results;
         this.next = this.data.next;
