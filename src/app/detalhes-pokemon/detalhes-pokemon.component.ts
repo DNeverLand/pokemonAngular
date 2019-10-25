@@ -21,8 +21,5 @@ export class DetalhesPokemonComponent implements OnInit {
       this.abilities = pokemon.abilities;
       this.types = pokemon.types;   
     });
-
-
   }
-
 }
