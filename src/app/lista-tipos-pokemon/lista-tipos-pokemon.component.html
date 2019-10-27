@@ -1,0 +1,12 @@
+<div class="container">
+    <h1 class="text-center mt-3" style="color: #dc3545">Tipos de pokemons</h1>
+    <div class="row mt-3">
+        <div class="col-4" *ngFor="let type of types">
+                <button class="btn btn-danger btn-block m-2"
+                    [title]="'Detalhes de '+ type.name"
+                    [routerLink]="['/types', type.url.split('/')[6]]">
+                    {{type.name}}
+                </button>
+        </div>
+    </div>
+</div>

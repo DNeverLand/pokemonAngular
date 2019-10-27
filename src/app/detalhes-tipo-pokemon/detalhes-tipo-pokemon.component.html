@@ -1,0 +1,32 @@
+<div *ngIf="tipo">
+    <div class="container">
+        <h1 class="text-center my-3" style="color: #dc3545">Tipo {{tipo.name}}</h1>
+        <div class="row d-flex justify-content-center">
+                <h3 class="text-center" style="color: #dc3545">Ataques</h3>
+                <div class="row d-flex justify-content-center my-3">
+                    <div class="col-3" *ngFor="let habilidade of habilidades">
+                            <button class="btn btn-danger btn-block my-1" disabled>{{habilidade.name}}</button>
+                    </div>
+                </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+                <h3 class="text-center" style="color: #dc3545">Pokemons</h3>
+                <div class="row d-flex justify-content-center my-3">
+                    <div class="col-3" *ngFor="let pokemon of pokemons">
+                            <button class="btn btn-danger btn-block my-1" disabled>{{pokemon.pokemon.name}}</button>
+                    </div>
+                </div>
+        </div>
+        <div class="row d-flex justify-content-center mt-5">
+            <h1 style="color: #dc3545">Tipo de Dano</h1>
+        </div>
+        <div class="row d-flex justify-content-center mt-1">
+                <h3 style="color: #dc3545">{{ tipo.move_damage_class.name}}</h3>
+        </div>
+        <div class="row d-flex justify-content-center my-3">
+            <div class="col-3">
+                    <button class="btn btn-primary btn-block mt-4" [routerLink]="['/types']">Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>

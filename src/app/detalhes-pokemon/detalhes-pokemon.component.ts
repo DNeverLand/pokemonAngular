@@ -15,6 +15,10 @@ export class DetalhesPokemonComponent implements OnInit {
   constructor(private servicePokemons:AshService, private route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.getPokemon();
+  }
+
+  getPokemon(){
     let id:number;
     this.route.paramMap.subscribe(params => id = +params.get('pokemonId'));
     this.servicePokemons.getPokemon(id).subscribe(pokemon => {this.pokemon = pokemon;

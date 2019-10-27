@@ -1,13 +1,8 @@
-<nav class="navbar navbar-dark navbar-expand-lg border border-dark" style="background-color: #D1422F;">
+<div class="container-fluid p-0">
+<nav class="navbar navbar-dark navbar-expand-lg border border-dark" style="background-color: #dc3545;">
         <span class="navbar-brand">Pokémons</span>
-        <a class="navbar-brand" [routerLink]="['/pokemons']" routerLinkActive="router-link-active" alt="pokeball"><img class="img1" src="../../assets/imgs/pokeball.png"></a>
-        <a class="navbar-brand" [routerLink]="['/fight']" alt="fight"><img class="img2" src="../../assets/imgs/battle.png"></a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="d-flex justify-content-end">
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" #pokemon placeholder="Search" aria-label="Search">
-            <a class="btn btn-secondary my-2 my-sm-0" [routerLink]="['/pokemons', pokemon.value]">Search</a>
-          </form>
-          </div>
-        </div>
+        <a class="navbar-brand" [routerLink]="['/pokemons']" routerLinkActive="router-link-active" class="mx-4"><img class="img1" alt="pokeball" src="../../assets/imgs/pokeball.png"></a>
+        <a class="navbar-brand" [routerLink]="['/types']">Tipos</a>
+        <a id="tipoPokemon" class="navbar-brand" [routerLink]="['/fight']" class="mx-4"><img class="img2" alt="fight" src="../../assets/imgs/battle.png"></a>
       </nav>
+    </div>

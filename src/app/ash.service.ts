@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable, of, BehaviorSubject} from 'rxjs';
 import { Pokemon } from './pokemon';
+import { Type } from './type';
 import { DataApi } from './data-api';
 import { HttpClient, HttpHeaders }    from '@angular/common/http';
 
@@ -27,14 +28,14 @@ export class AshService {
 
   }
 
-  getAllTypes(): Observable<string[]>{
+  getAllTypes(): Observable<DataApi>{
     //Retorna os 20 tipo de de pokemons
-    return this.http.get<string[]>(this.pokemonCatcher + "type")
+    return this.http.get<DataApi>(this.pokemonCatcher + "type")
   }
 
-  getSpecificType(type:string): Observable<Pokemon[]>{
+  getSpecificType(id:number): Observable<Type>{
     //Retorna todos os pokemons desse tipo
-    return this.http.get<Pokemon[]>(type);
+    return this.http.get<Type>(this.pokemonCatcher + "type/" + id);
 
   }
 }

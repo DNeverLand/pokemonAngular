@@ -1,45 +1,45 @@
 <div *ngIf="pokemon">
-    <div class="row d-flex justify-content-center my-3">
-        <h4>Detalhes do {{pokemon.forms[0].name}}</h4>
-    </div>
-    <div class="row d-flex justify-content-center">
-        <h6>Imagens</h6>
-    </div>
-    <div class="row my-3">
-        <div class="col-6 d-flex justify-content-end">
-            <figure>
-                <img src="{{pokemon.sprites.front_default}}"/>
-                <figcaption>Default</figcaption>
-            </figure>
+    <h1 class="text-center mt-3" style="color: #dc3545">Detalhes do {{pokemon.forms[0].name}}</h1>
+    <div class="row d-flex justify-content-center mt-5">
+        <div class="col-3">
+            <table>
+                <tr>
+                    <th class="text-center" colspan="2" style="color: #dc3545">Imagens</th>
+                </tr>
+                <tr>
+                    <td><img src="{{pokemon.sprites.front_default}}"/></td>
+                    <td><img src="{{pokemon.sprites.front_shiny}}"/></td>
+                </tr>
+                <tr>
+                    <td class="text-center" style="color: #dc3545"><p>Default</p></td>
+                    <td class="text-center" style="color: #dc3545"><p>Shiny</p></td>
+                </tr>
+            </table>
         </div>
-        <div class="col-6 d-flex justify-content-start">
-            <figure>
-                <img src="{{pokemon.sprites.front_shiny}}"/>
-                <figcaption>Shiny</figcaption>
-            </figure>
-        </div>
-    </div>
-    <div class="row d-flex justify-content-center">
-        <h6>Habilidades</h6>
-    </div>
-    <div class="row d-flex justify-content-center my-3">
-        <div *ngFor="let ability of abilities">
-            <div class="col-3">
-                <p>{{ability.ability.name}}</p>
+
+    <div class="col-3">
+        <p style="font-size: 14px;" class="text-center font-weight-bold" style="color: #dc3545">Habilidades</p>
+        <div class="row d-flex justify-content-center my-3">
+            <div *ngFor="let ability of abilities">
+                <div class="col-4" style="color: #dc3545">
+                    <p>{{ability.ability.name}}</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row d-flex justify-content-center">
-        <h6>Tipo</h6>
-    </div>
-    <div class="row d-flex justify-content-center">
-        <div *ngFor="let type of types">
-            <div class="col-3">
-                <p>{{type.type.name}}</p>
+    <div class="col-3">
+        <p style="font-size: 14px;" class="text-center font-weight-bold" style="color: #dc3545">Tipo</p>
+        <div class="row d-flex justify-content-center">
+            <div *ngFor="let type of types">
+                <div class="col-4" style="color: #dc3545">
+                    <p>{{type.type.name}}</p>
+                </div>
             </div>
-        </div>
-    </div> 
-    <div class="row d-flex justify-content-center">
-        <button class="btn btn-primary mt-3" [routerLink]="['/pokemons']">Voltar</button>
+        </div> 
+    </div>
+</div>
+<div class="row d-flex justify-content-center">
+    <div class="col-3">
+            <button class="btn btn-primary btn-block mt-4" [routerLink]="['/pokemons']">Voltar</button>
     </div>
 </div>
